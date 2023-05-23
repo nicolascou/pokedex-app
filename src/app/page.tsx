@@ -22,8 +22,8 @@ export default async function Home() {
         {
           pokemonArray &&
           pokemonArray.map(({ name }, index) => (
-            <Link href={{ pathname: '/pokemon/[slug]', query: { slug: name } }} 
-            key={name} className="bg-gray border-2 border-black rounded-lg"
+            <Link href={`/pokemon/${name}`} key={name} 
+              className="bg-gray border-2 border-black rounded-lg"
             >
               <Image src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' + (index+1)).slice(-3)}.png`} alt={`${name} front image`} width={200} height={200} />
               <p>{name}</p>
