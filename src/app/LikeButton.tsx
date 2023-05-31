@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface ISavedPokemon {
   name: string;
@@ -20,7 +21,9 @@ const LikeButton = (pokemon: ISavedPokemon) => {
   }, [liked, pokemon]);
   
   return (
-    <button>Like</button>
+    <button>
+      <Image src="/icons/pokeball.png" width={23} height={23} alt="Heart Icon" />
+    </button>
   )
 }
 
