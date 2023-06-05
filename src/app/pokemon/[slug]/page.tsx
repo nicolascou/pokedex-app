@@ -1,4 +1,5 @@
 import { Pokemon } from "@/types/PokeAPI";
+import Image from "next/image";
 
 interface Props {
   params: {
@@ -15,12 +16,13 @@ const PokemonDetails = async ({ params }: Props) => {
   const pokemonDetails: Pokemon = await fetchPokemonDetails(params.slug);
   
   return (
-    <div>
-      <pre>
-        {
-          JSON.stringify(pokemonDetails, null, 2)
-        }
-      </pre>
+    <div className="p-8">
+      <div className="flex justify-center items-center">
+        <Image src={pokemonDetails.sprites.front_default} width={100} height={100} alt="Front Default Sprite" />
+        <Image src={pokemonDetails.sprites.back_default} width={100} height={100} alt="Back Default Sprite" />
+        <Image src={pokemonDetails.sprites.front_shiny} width={100} height={100} alt="Front Shiny Default Sprite" />
+        <Image src={pokemonDetails.sprites.back_shiny} width={100} height={100} alt="Back Shiny Default Sprite" />
+      </div>
     </div>
   )
 }

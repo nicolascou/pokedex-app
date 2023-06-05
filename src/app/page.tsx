@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import LikeButton from './LikeButton';
 
 interface Pokemon {
   name: string;
@@ -31,7 +30,7 @@ export default async function Home() {
               <p className='text-center capitalize text-yellow-300 text-xl tracking-wider font-bold'>{name}</p>
               <Image src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' + (index+1)).slice(-3)}.png`} alt={`${name} front image`} width={150} height={150} />
               <div className='flex items-center justify-between'>
-                <LikeButton name={name} id={('00' + (index+1)).slice(-3)} />
+                <Image src="/icons/poke.png" width={22} height={22} alt="Pokeball" />
                 <p className='text-gray-100 bottom-4 right-4'>#{('00' + (index+1)).slice(-3)}</p>
               </div>
             </Link>
