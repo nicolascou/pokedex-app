@@ -18,12 +18,14 @@ export default async function Home() {
   return (
     <>
       <div className='flex items-end justify-center'>
-        <div className='py-2 px-4 rounded-lg shadow-lg shadow-gray-400 border-2 border-black'>
-          <i></i>
-          <input type="text" className='bg-transparent outline-none border-none' />
+        <div className='flex w-56 items-center py-2 px-3 rounded-lg shadow-lg shadow-gray-400 border-2 border-black'>
+          <Image src='/search.svg' alt='Magnifying glass icon' width={15} height={15} />
+          <input type="text" className='bg-transparent outline-none border-none ml-2' />
         </div>
-        <Image src='/logo.png' width={400} height={150} className='mx-20' alt='Pokemon Title' />
-        <Link href='https://google.com'>Favorites</Link>
+        <Image src='/logo.png' width={400} height={150} className='mx-32' alt='Pokemon Title' />
+        <div className='w-56'>
+          <Link href='https://google.com'>Favorites</Link>
+        </div>
       </div>
       <main className="flex gap-5 mt-12 items-center justify-center flex-wrap">
         {
