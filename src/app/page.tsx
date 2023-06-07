@@ -17,21 +17,28 @@ export default async function Home() {
   
   return (
     <>
-      <div className='flex align-center justify-center'>
-        <h1 className='text-4xl text-center mt-10 uppercase font-bold tracking-wider bg-white px-20 py-6 rounded-3xl'>Pokedex</h1>
+      <div className='flex items-end justify-center'>
+        <div className='flex w-56 items-center py-2 px-3 rounded-lg shadow-lg shadow-gray-400 border-2 border-black'>
+          <Image src='/search.svg' alt='Magnifying glass icon' width={15} height={15} />
+          <input type="text" className='bg-transparent outline-none border-none ml-2' />
+        </div>
+        <Image src='/logo.png' width={400} height={150} className='mx-32' alt='Pokemon Title' />
+        <div className='w-56'>
+          <Link href='https://google.com'>Favorites</Link>
+        </div>
       </div>
-      <main className="flex gap-5 p-12 items-center justify-center flex-wrap">
+      <main className="flex gap-5 mt-12 items-center justify-center flex-wrap">
         {
           pokemonArray &&
           pokemonArray.map(({ name }, index) => (
             <Link href={`/pokemon/${name}`} key={name} 
-              className="border-2 border-black rounded-lg bg-orange-800 p-4 hover:bg-orange-700 duration-500"
+              className="border-2 border-black rounded-lg shadow-lg shadow-gray-400 bg-blue-400 p-4 hover:bg-blue-500 duration-500"
             >
-              <p className='text-center capitalize text-yellow-300 text-xl tracking-wider font-bold'>{name}</p>
+              <p className='text-center capitalize text-black text-xl tracking-wider font-bold'>{name}</p>
               <Image src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' + (index+1)).slice(-3)}.png`} alt={`${name} front image`} width={150} height={150} />
               <div className='flex items-center justify-between'>
                 <Image src="/icons/poke.png" width={22} height={22} alt="Pokeball" />
-                <p className='text-gray-100 bottom-4 right-4'>#{('00' + (index+1)).slice(-3)}</p>
+                <p className='text-black bottom-4 right-4'>#{('00' + (index+1)).slice(-3)}</p>
               </div>
             </Link>
           ))
